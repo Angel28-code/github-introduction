@@ -1,8 +1,24 @@
 ---
-title: "Analysis 1"
+title: "A Beautiful Graphic"
 author: Angel Legrand
 format: html
+execute:
+  echo: false
+  message: false
 ---
 
+```{r}
+library(ggplot2)
+```
 
-
+```{r}
+ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
+  geom_point(size = 3) +
+  labs(
+    title = "Fuel Efficiency by Vehicle Weight",
+    x = "Weight (1000 lbs)",
+    y = "Miles per Gallon",
+    color = "Cylinders"
+  ) +
+  theme_minimal()
+```
